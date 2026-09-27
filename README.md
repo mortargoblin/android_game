@@ -53,11 +53,11 @@ Kotlin 2.1 project. Without signing variables set, release builds are signed wit
 ### Releases (GitHub Actions)
 
 `.github/workflows/release.yml` builds the APK on every push; you can download it from the run's
-artifacts. Pushing a tag that starts with `v` also publishes a GitHub Release with the APK attached:
+artifacts. To publish a GitHub Release with the APK attached, do one of these:
 
-```sh
-git tag v1.1 && git push origin v1.1
-```
+- **Actions → Build APK → Run workflow**, choose the branch and enter a version such as `v1.1`. The
+  workflow creates the tag for you.
+- Push a tag: `git tag v1.1 && git push origin v1.1`
 
 To sign every release with the same key, so that a new version installs over an old one, add these
 repository secrets (Settings → Secrets and variables → Actions):
